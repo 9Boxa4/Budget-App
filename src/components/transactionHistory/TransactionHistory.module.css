@@ -1,0 +1,88 @@
+.transaction-list-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+}
+
+.income-list-container,.expense-list-container{
+    width: 25%; 
+}
+
+
+.income-list div:nth-child(odd),
+.expense-list div:nth-child(odd){
+    background-color: rgb(251, 247, 247);
+}
+
+
+.income-list div:nth-child(even),
+.expense-list div:nth-child(even)
+{
+    background-color: rgb(197, 238, 179);
+}
+.expense-list-header{
+    color:  rgb(255, 84, 84);
+}
+
+.income-list div,.expense-list div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px 0;
+    padding: 16px 12px;
+    flex-wrap: wrap;
+    
+}
+
+.expenses-span{
+  color: rgb(255, 11, 11);
+}
+
+
+.expense-span-procent{
+    text-align: center;
+    color: rgb(255, 11, 11);
+    background-color: rgb(255, 206, 188);
+    padding: 3px 6px;
+    border-radius: 3px;
+    font-weight: 450;
+    width: 17%;
+}
+
+.hidden{
+    display: none;
+}
+
+.delete-btn{
+    display: block;
+    font-weight: 900;
+    font-size: 1.4rem;
+    color: #fff;
+    background-color: rgb(255, 84, 84);
+    padding: 2px 5px;
+    border: 1px inherit solid;
+    border-radius: 0.1rem;
+    box-shadow: rgb(255, 84, 84);
+    cursor: pointer;
+}
+
+span[data-tool-tip]{
+    position: relative;
+}
+
+span[data-tool-tip]::after {
+   content: attr(data-tool-tip);
+   display: block;
+   position: absolute;
+   background-color:rgb(216, 220, 218);
+   padding: 1em;
+   color: black;
+   font-weight: 300;
+   border-radius: 10px;
+   font-size: .75em;
+   left:110%;
+   z-index: 1;
+}

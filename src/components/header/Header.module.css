@@ -1,0 +1,62 @@
+.header-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url("https://mcdn.wallpapersafari.com/medium/72/73/bSsf9m.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: aliceblue;
+    text-align: center;
+    gap: 20px;
+    padding-bottom: 20px;
+}
+
+.header_date{
+    font-weight: 500;
+}
+
+.header_budget-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.current-budget{
+    font-size: 3rem;
+    margin: 10px;
+}
+
+.header_bugdet-transaction{
+    color: aliceblue;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.income-state, .expense-state{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 35%;
+}
+
+.income-state{
+    background-color: rgb(34, 95, 193);
+    
+}
+.expense-state{
+    background-color: rgb(192, 136, 116)
+}
+
+
+.procent-final{
+    border: 1px solid rgb(233, 164, 139) ;
+    border-radius: 8px;
+    box-shadow: 3px 6px gray;
+    margin-left: 10px;
+    padding: 5px;
+}
