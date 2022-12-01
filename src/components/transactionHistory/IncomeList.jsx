@@ -21,12 +21,15 @@ function hoverDelete(e){
          localStorage.setItem('transactions',JSON.stringify(transactions))
         })
       }
+
       
       function handleMouseLeave(e){
           e.target.lastChild.classList.remove(styles[`delete-btn`])
           e.target.lastChild.classList.add(styles.hidden)
       }
       
+const deleteBtnEl = <span className={styles.hidden}data-tool-tip='Click here or "X" if you want to remove the element'>X</span> 
+
 //creating a list out of income elements
 let incomeItems = incomeTrack.map((income)=> 
  <div
@@ -38,12 +41,10 @@ className={styles['income-list-block']}
  >
 {income.description} 
  <span className={styles['Income-span']}> +{settingValues(income.value)}</span>  
-<span className={styles.hidden}data-tool-tip='Click here or "X" if you want to remove the element'>X</span> 
-
+{deleteBtnEl}
   </div>
   )
   
-
   return (
     <div className={styles['income-list-container']}>
           <h2 className={styles['income-list-header']}>INCOME</h2>

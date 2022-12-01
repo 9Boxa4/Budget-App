@@ -86,3 +86,10 @@ span[data-tool-tip]::after {
    left:110%;
    z-index: 1;
 }
+
+@media(320px<=width<=1000px){
+    .expense-span-procent{
+        padding: 0;
+        width: 30%;
+    }
+}

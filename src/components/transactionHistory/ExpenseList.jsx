@@ -17,6 +17,13 @@ const ExpenseList = () => {
       e.target.lastChild.classList.remove(styles[`delete-btn`])
       e.target.lastChild.classList.add(styles.hidden)
   }
+
+  const expensesPercentEl = (expenseValue) =>
+  {
+    return <>{fullIncome===0? "": Math.round(expenseValue/fullIncome*100)}{fullIncome === 0? "":"%"}</>
+  }
+  
+  const deleteBtnEl = <span className={styles['hidden']} data-tool-tip='Click here or "X" if you want to remove the element'>X</span>
   
   let expenseItems = expenseTrack.map((expense)=> 
   <div 
@@ -32,9 +39,9 @@ const ExpenseList = () => {
       </span> 
       <span 
       className={fullIncome === 0 ? null : styles['expense-span-procent']}>
-      {fullIncome===0? "": Math.round(expense.value/fullIncome*100)}{fullIncome === 0? "":"%"}
+      {expensesPercentEl(expense.value)}
       </span>
-  <span className={styles['hidden']} data-tool-tip='Click here or "X" if you want to remove the element'>X</span>
+    {deleteBtnEl}
     </div>)
 
 function hoverDelete(e){    
