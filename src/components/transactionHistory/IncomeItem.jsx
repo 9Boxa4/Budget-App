@@ -1,6 +1,8 @@
 import React,{useContext} from 'react';
 import styles from "./TransactionHistory.module.css";
 import {TransactionContext} from "../../context/transaction-context";
+import { useEffect } from 'react';
+import { hover } from '@testing-library/user-event/dist/hover';
 
 
 const IncomeItem = () => {
@@ -19,9 +21,13 @@ function hoverDelete(e){
        e.target.lastChild.addEventListener('click',()=>
        {
          setTransactions(state=> state.filter(el=> el.id !==e.target.id))
-         localStorage.setItem('transactions',JSON.stringify(transactions))
+        //  localStorage.setItem('transactions',JSON.stringify(transactions))
         })
       }
+
+      useEffect(()=>{
+        localStorage.setItem('transactions',JSON.stringify(transactions))
+      },[transactions,hoverDelete])
 
       
 function handleMouseLeave(e){

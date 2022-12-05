@@ -1,4 +1,5 @@
 import React,{useContext} from 'react';
+import { useEffect } from 'react';
 import { TransactionContext } from '../../context/transaction-context';
 import styles from './TransactionHistory.module.css'
 
@@ -19,9 +20,14 @@ const ExpenseItem = () => {
     e.target.lastChild.addEventListener('click',event=>
     {
       setTransactions(state=> state.filter(el=> el.id !==e.target.id));
-      localStorage.setItem('transactions',JSON.stringify(transactions));
+      // localStorage.setItem('transactions',JSON.stringify(transactions));
      })
 }
+
+useEffect(()=>
+{
+  localStorage.setItem('transactions',JSON.stringify(transactions));
+},[transactions,hoverDelete])
 
   function handleMouseLeave(e)
   {
