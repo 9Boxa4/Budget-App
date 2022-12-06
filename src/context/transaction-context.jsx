@@ -4,18 +4,8 @@ import {DUMMY_DATA} from '../data/transaction-data'
 export const  TransactionContext = createContext();
 
 export const TransactionProvider = ({children})=>{
-    const [transactions,setTransactions] = useState(DUMMY_DATA);
+    const [transactions,setTransactions] = useState(JSON.parse(localStorage.getItem('transactions')) || DUMMY_DATA);
     
-    
-    useEffect(()=>{
-        if(localStorage.getItem('transactions') === null){
-            localStorage.setItem('transactions',JSON.stringify(transactions))
-        }
-        else{
-            setTransactions(JSON.parse(localStorage.getItem('transactions')))
-        }
-    },[])
-
     
     //Split income and expense objects into different categories
     const incomeTrack = transactions.filter(data=>data.type === 'income');
