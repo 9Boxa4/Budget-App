@@ -3,10 +3,10 @@ import styles from'./Form.module.css'
 import { TransactionContext } from '../../context/transaction-context'
 import {v4 as uuidv4} from 'uuid'
 import { useContext } from 'react'
+import { useEffect } from 'react'
 
 export const Form = (props) => {
   const {transactions,setTransactions} = useContext(TransactionContext);
-  // console.log(setTransactions);
 
   const [choice,setChoice] = useState('-');
   const [description,setDescription] = useState('')
@@ -57,11 +57,15 @@ const checkValue= (numberValue)=>{
       setTransactions(state=>[...state,{
         id:id,type: choice === "+"? "income": "expense", description:description,value:+valueInput
       }])
-      localStorage.setItem('transactions',JSON.stringify(transactions));
       clearInputFields()
     }
   }
   
+
+  useEffect(()=>
+  {
+    localStorage.setItem('transactions',JSON.stringify(transactions));
+  },[handleSubmit])
 
  //clearing input fields
 function clearInputFields (){
