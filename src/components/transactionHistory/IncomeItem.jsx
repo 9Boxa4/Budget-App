@@ -2,8 +2,6 @@ import React,{useContext} from 'react';
 import styles from "./TransactionHistory.module.css";
 import {TransactionContext} from "../../context/transaction-context";
 import { useEffect } from 'react';
-import { hover } from '@testing-library/user-event/dist/hover';
-
 
 const IncomeItem = () => {
     const {incomeTrack,setTransactions,transactions} = useContext(TransactionContext);
@@ -54,7 +52,7 @@ className={styles['income-list-block']}
 
   return (
     <>
-    {incomeTrack.length?incomeItems:'No incomes to show at this time'}
+    {incomeTrack.length? incomeItems : 'No incomes to show at this time'}
     </>
   )
 }

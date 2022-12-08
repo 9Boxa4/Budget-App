@@ -60,3 +60,9 @@
     margin-left: 10px;
     padding: 5px;
 }
+
+@media(320px<=width<=600px){
+    .income-state, .expense-state{
+        width: 70%;
+    }
+}

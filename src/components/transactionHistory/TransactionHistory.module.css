@@ -34,7 +34,7 @@
     margin: 5px 0;
     padding: 16px 12px;
     flex-wrap: wrap;
-    
+    position: relative;
 }
 
 .expenses-span{
@@ -57,7 +57,9 @@
 }
 
 .delete-btn{
-    display: block;
+    position: absolute;
+    right: -6%;
+    z-index: 10;
     font-weight: 900;
     font-size: 1.4rem;
     color: #fff;
@@ -69,11 +71,11 @@
     cursor: pointer;
 }
 
-span[data-tool-tip]{
+/* span[data-tool-tip]{
     position: relative;
-}
+} */
 
-span[data-tool-tip]::after {
+/* span[data-tool-tip]::after {
    content: attr(data-tool-tip);
    display: block;
    position: absolute;
@@ -85,11 +87,28 @@ span[data-tool-tip]::after {
    font-size: .75em;
    left:110%;
    z-index: 1;
-}
+} */
 
-@media(320px<=width<=1000px){
+
+@media(600px<=width<=1000px){
     .expense-span-procent{
         padding: 0;
-        width: 30%;
+    }
+    
+    .income-list-container,.expense-list-container{
+        width: 40%;
+    }
+}
+
+@media(320px<=width<=600px){
+    .expense-span-procent{
+        padding: 0;
+    }
+    .delete-btn{
+        right: -10%;
+    }
+
+    .income-list-container,.expense-list-container{
+        width: 70%;
     }
 }
